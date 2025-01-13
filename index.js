@@ -1,7 +1,9 @@
+// require('dotenv').config();     // to use .env file
+import 'dotenv/config'; // to use .env file
 import express from 'express';
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.use(express.json());
 
 let teaData = []
@@ -106,5 +108,5 @@ app.get('/instagram', (req,res)=>{
 })
 
 app.listen(port, ()=>{
-    console.log(`the server is running on port: , ${port}`);
+    console.log(`the server is running on port: , ${port}....`);
 })
